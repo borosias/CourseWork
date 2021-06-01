@@ -1,0 +1,486 @@
+body {
+	overflow-y: scroll;
+	font-family: "-apple-system",BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+	padding: 0;
+	margin: 0;
+	color: #FFF;
+	background: linear-gradient(to top, #000400 20%,  #000467 80%);
+    background-size: 100%;
+	background-attachment: fixed
+}
+
+.clearfix:after {
+	content: '';
+	display: table;
+	width: 100%;
+	clear: both;
+}
+
+.container {
+	border: 1px solid #ccc;
+	width: 65% ;
+	margin: 0 auto;
+	display: block;
+	background-color:rgba(139,139,139,0.8);
+}
+/*===================================================================*/
+.topnav {
+	overflow: hidden;
+	background-color: #333;
+}
+
+.topnav .dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.topnav .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.topnav .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.topnav .dropdown a:hover {background-color: #ddd;}
+
+.topnav .show {display: block;}
+/* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+.button_log{
+	font-family: "-apple-system",BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+	background-color: rgba(0,0,0,0);
+	font-size: 17px;
+	color: white;
+	padding: 14px 16px;
+	border: none;
+	cursor: pointer;}
+/* Change the color of links on hover */
+.topnav a:hover ,.button_log:hover {
+	opacity: 0.8;
+	transition: 0.4s;
+	background-color: #ddd;
+	color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+	background-color: #04AA6D;
+	color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav .search-container {
+	float: right;
+}
+
+.topnav input[type=text] {
+	padding: 6px;
+	margin-top: 8px;
+	font-size: 17px;
+	border: none;
+}
+
+.topnav .search-container button {
+
+	padding: 6px 10px;
+	margin-top: 8px;
+	background: #ddd;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+	background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+	.topnav .search-container {
+		float: none;
+	}
+	.topnav a, .topnav input[type=text], .topnav .search-container button {
+		float: none;
+		display: block;
+		text-align: left;
+		width: 100%;
+		margin: 0;
+		padding: 14px;
+	}
+	.topnav input[type=text] {
+		border: 1px solid #ccc;
+	}
+}
+
+.log_in {
+	color: black;
+}
+
+.log_in button {
+	background-color: #04AA6D;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+.log_in button:hover {
+	opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.log_in .cancelbtn {
+	width: auto;
+	padding: 10px 18px;
+	background-color: #f44336;
+}
+
+.log_in .logEmail, input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+.log_in .logEmail:focus, input[type=password]:focus, button:focus {
+	outline: none;
+}
+/* Center the image and position the close button */
+.imgcontainer {
+	text-align: center;
+	margin: 24px 0 12px 0;
+	position: relative;
+}
+
+img.avatar {
+	width: 40%;
+	border-radius: 50%;
+}
+
+.log_in .container_l {
+	padding: 16px;
+}
+
+.log_in span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal_home {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-home-content {
+	background-color: #fefefe;
+	margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	border: 1px solid #888;
+	width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.modal_home .close {
+	position: absolute;
+	right: 25px;
+	top: 3px;
+	color: #000;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.modal_home .close:hover,
+.modal_home .close:focus {
+	color: red;
+	cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+	-webkit-animation: animatezoom 0.6s;
+	animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+	from {-webkit-transform: scale(0)}
+	to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+	from {transform: scale(0)}
+	to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+	span.psw {
+		display: block;
+		float: none;
+	}
+	.cancelbtn {
+		width: 100%;
+	}
+}
+
+
+.sign_up * {box-sizing: border-box}
+
+/* Поля ввода полной ширины */
+.sign_up input[type=text],.su_email, .su_psw {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+.sign_up input[type=text]:focus,.su_email:focus, .su_psw:focus, .lg_psw:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+.sign_up hr {
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+
+/* Установите стиль для всех кнопок */
+.sign_up button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	opacity: 0.9;
+}
+
+.sign_up button:hover {
+	opacity:1;
+}
+
+/* Дополнительные стили для кнопки "Отмена" */
+.sign_up .su_cancelbtn {
+	padding: 14px 20px;
+	background-color: #f44336;
+}
+
+/* Поплавок отмена и кнопки регистрации и добавить равную ширину */
+.sign_up .su_cancelbtn, .su_signupbtn {
+	float: left;
+	width: 50%;
+}
+
+/* Добавить отступы к элементам контейнера */
+.sign_up .container3 {
+	padding: 16px;
+}
+
+/* Очистить поплавки */
+.sign_up .clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.groups_table {
+	margin: 0 auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 95%;
+	border: 2px solid #ddd;
+
+}
+.groups_table .tr{
+	background-color: #626262;
+}
+.groups_table .th, .td {
+	text-align: left;
+	padding: 16px;
+}
+
+.groups_table .tr:nth-child(even) {
+	background-color: #ABABAB;
+}
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	-webkit-animation-name: fadeIn; /* Fade in the background */
+	-webkit-animation-duration: 0.4s;
+	animation-name: fadeIn;
+	animation-duration: 0.4s
+}
+
+/* Modal Content/Box */
+.modal-content {
+
+	position: fixed;
+	bottom: 0;
+	background-color: #fefefe;
+	width: 100%;
+	-webkit-animation-name: slideIn;
+	-webkit-animation-duration: 0.4s;
+	animation-name: slideIn;
+	animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close_adder {
+	color: white;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close_adder:hover,
+.close_adder:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal-header {
+	padding: 2px 16px;
+	background-color: #5cb85c;
+	color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+	padding: 2px 16px;
+
+	color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+	from {bottom: -300px; opacity: 0}
+	to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+	from {bottom: -300px; opacity: 0}
+	to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+	from {opacity: 0}
+	to {opacity: 1}
+}
+
+@keyframes fadeIn {
+	from {opacity: 0}
+	to {opacity: 1}
+}
+
+#myBtn {
+	display: block;
+	font-size: 18px;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: auto;
+	border: none;
+	cursor: pointer;
+	width: 90%;
+
+}
+
+.groups_name {
+	width: 99%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+.apply_add_group{
+	display: block;
+	font-size: 18px;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin-left: 90%;
+	border: none;
+	cursor: pointer;
+	width: 10%;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.td1{
+	text-align: left;
+	padding: 0;
+
+}
+.td1 input[type=text], .sEmail{
+	padding: 16px;
+	width: 88.38%;
+	display: inline-block;
+	border: none;
+	background-color: rgba(256,256,256,0);
+}
+.td1 input[type=Date]{
+	padding: 16px;
+	width: 87%;
+	display: inline-block;
+	border: none;
+	cursor: text;
+	background-color: rgba(256,256,256,0);
+}
+.td1 .sEmail:focus,input[type=text]:focus{
+	outline: none;
+}
+.groups_table .tr1:nth-child(even) {
+	background-color: #EAEAEA;
+}
+.inf {
+	float: right;
+	margin: 30px;
+	margin-right: 10%;
+	text-shadow:2px 3px rgba(0,0,0,0.4);
+}
+.default_home .text_def {
+	text-align: center;
+	text-shadow:2px 3px rgba(0,0,0,0.4);
+}
