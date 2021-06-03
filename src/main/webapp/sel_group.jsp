@@ -52,7 +52,7 @@
     </c:if>
     <div class="search-container">
         <form style="display:inline" method="POST" action="finder">
-            <input type="text" placeholder="Search.." name="search">
+            <input type="text" placeholder="Search.." name="search" required>
 
             <button type="submit"><i class="fa fa-search"></i></button>
 
