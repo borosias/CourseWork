@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 @WebServlet(name = "finder", value = "/finder")
 public class Finder extends HttpServlet {
@@ -25,7 +26,11 @@ public class Finder extends HttpServlet {
         String search = req.getParameter("search").toLowerCase();
         if ("surname".equals(filter)) {
             listFindStudents = st.findStudentBySurname(search);
-            listFindStudents.sort(Comparator.comparing(student -> student.get(1)));
+            if(Objects.isNull(listFindStudents)){
+
+            }else {
+                listFindStudents.sort(Comparator.comparing(student -> student.get(1)));
+            }
         }
         if ("group".equals(filter)) {
             try {

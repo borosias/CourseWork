@@ -1,7 +1,5 @@
 package Controllers;
 
-import Models.Student;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +18,6 @@ public class StudentEditor extends HttpServlet {
         String status = info[2].replaceAll("[^A-Za-z]","");
         String email = info[3].replaceAll("[^A-Za-z0-9@.!#$%&]","");
 
-        System.out.println(status);
 
         req.setAttribute("editName",fsname);
         req.setAttribute("editSurname",ssname);

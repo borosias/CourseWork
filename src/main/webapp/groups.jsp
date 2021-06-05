@@ -51,7 +51,7 @@
     </c:if>
     <div class="search-container">
         <form style="display:inline" method="POST" action="finder">
-            <input type="text" placeholder="Search.." name="search" required>
+            <input type="text" placeholder="Search.." name="search" pattern="^[a-zA-Z0-9-]+$"  required>
 
             <button type="submit"><i class="fa fa-search"></i></button>
 
@@ -182,7 +182,7 @@
                     <form method="post" action="tableAdd">
                         <div style="margin-top: 19px;" class="modal-body">
                             <label><b style="color:black;">Group name</b></label>
-                            <input type="text" style="width:90%" maxlength="5" class="groups_name" placeholder="Enter group name"
+                            <input type="text" style="width:90%" maxlength="5" class="groups_name" pattern="[a-zA-Z]{2}-[0-9]{2}" placeholder="Enter group name, for example: IA-01"
                                    name="gp_name" required>
                         </div>
                         <div class="modal-footer">
@@ -195,7 +195,7 @@
                         <div style="margin-top: 19px;" class="modal-body">
                             <label><b style="color:black;">Group name</b></label>
                             <input type="hidden" name="name" value="${editingName}">
-                            <input type="text" style="width:90%" maxlength="5" class="groups_name" placeholder="Enter group name"
+                            <input type="text" style="width:90%" maxlength="5" class="groups_name" pattern="[a-zA-Z]{2}-[0-9]{2}" placeholder="Enter group name, for example: IA-01"
                                    name="gp_name" value="${editingName}" required>
                         </div>
                         <div class="modal-footer">

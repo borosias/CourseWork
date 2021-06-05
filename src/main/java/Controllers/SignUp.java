@@ -1,6 +1,5 @@
 package Controllers;
 
-import DB.ConnectionDB;
 import Models.User;
 
 import javax.servlet.*;

@@ -9,10 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
-    private String sName;
-    private String fName;
-    private String date;
-    private String status;
 
     public Student() {
 
@@ -108,6 +104,7 @@ public class Student {
             }
             return students;
         }
+
 
         public List<ArrayList<String>> findStudentByGroup(String gid) {
             List<ArrayList<String>> students = new ArrayList<>();

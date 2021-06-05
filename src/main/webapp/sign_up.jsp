@@ -25,7 +25,7 @@
 	</c:if>
 	<div class="search-container">
 		<form style="display:inline" method="POST" action="finder">
-			<input type="text" placeholder="Search.." name="search" required>
+			<input type="text" placeholder="Search.." name="search" pattern="^[a-zA-Z0-9-]$"  required>
 
 			<button type="submit"><i class="fa fa-search"></i></button>
 

@@ -74,6 +74,7 @@ public class Group {
             }
         }
     }
+
     public String getGNameById(Integer id) throws SQLException {
         String gName = "";
         try (Statement stat = ConnectionDB.getConnection().createStatement()) {

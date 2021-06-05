@@ -51,7 +51,7 @@
     </c:if>
     <div class="search-container">
         <form style="display:inline" method="POST" action="finder">
-            <input type="text" placeholder="Search.." name="search" required>
+            <input type="text" placeholder="Search.." name="search" pattern="^[a-zA-Z0-9-]+$"  required>
 
             <button type="submit"><i class="fa fa-search"></i></button>
 
@@ -61,11 +61,12 @@
                     <input type="radio" name="filter" value="surname" checked required>By Surname
                 </div>
                 <div style="margin: 5px 10px 10px 10px;font-weight:500; ">
-                    <input type="radio" name="filter" value="group"  required>By Group
+                    <input type="radio" name="filter" value="group" required>By Group
                 </div>
             </div>
         </form>
-        <button onclick="myFunction()" style="color:black; margin-right: 10px;" class="dropbtn"><i class="fa fa-filter"></i></button>
+        <button onclick="myFunction()" style="color:black; margin-right: 10px;" class="dropbtn"><i
+                class="fa fa-filter"></i></button>
     </div>
 </div>
 
@@ -104,24 +105,32 @@
 </script>
 <div class="container">
     <div class="groups">
-        <h1 style="margin:0 auto; padding-top: 30px; padding-left: 30px;">Searching results</h1>
-        <div style="margin: 20px 0 ;">
-            <table class="groups_table">
-                <tr class="tr" style="color: white;">
-                    <th class="th">Second Name</th>
-                    <th class="th">First Name</th>
-                    <th class="th">Status</th>
-                    <th class="th">Email</th>
-                    <th class="th">Group</th>
-                    <th></th>
-                </tr>
-                <jsp:useBean id="listFindStudents" scope="request" type="java.util.List"/>
-                <c:forEach items="${listFindStudents}" var="student">
-                    <tr class="tr" style="color:white">
-                        <c:forEach items="${student}" var="info">
-                            <td class="td">${info}</td>
-                        </c:forEach>
+            <h1 style="margin:0 auto; padding-top: 30px; padding-left: 30px;">Searching results</h1>
+            <div style="margin: 20px 0 ;">
+                <table class="groups_table">
+                    <jsp:useBean id="listFindStudents" scope="request" type="java.util.List"/>
 
+                    <tr class="tr" style="color: white;">
+                        <th class="th">First Name</th>
+                        <th class="th">Second Name</th>
+                        <th class="th">Status</th>
+                        <th class="th">Email</th>
+                        <th class="th">Group</th>
+                        <th class="th"></th>
+                    </tr>
+                    <c:if test="${listFindStudents==[]}">
+                        <td class="td">NOTHING</td>
+                        <td class="td">FOUND!</td>
+                        <td class="td">CHEK</td>
+                        <td class="td">YOUR</td>
+                        <td class="td">REQUEST :)</td>
+                        <td class="td"></td>
+                    </c:if>
+                    <c:forEach items="${listFindStudents}" var="student">
+                        <tr class="tr" style="color:white">
+                            <c:forEach items="${student}" var="info">
+                                <td class="td">${info}</td>
+                            </c:forEach>
                             <td class="td">
                                 <div style="float:right">
                                     <form style="display:inline;" method="post" action="ShowStudents">
@@ -136,11 +145,11 @@
                                     </form>
                                 </div>
                             </td>
-                    </tr>
-                </c:forEach>
-            </table>
+                        </tr>
+                    </c:forEach>
 
-        </div>
+                </table>
+            </div>
     </div>
 </div>
 </body>

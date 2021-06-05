@@ -52,7 +52,7 @@
     </c:if>
     <div class="search-container">
         <form style="display:inline" method="POST" action="finder">
-            <input type="text" placeholder="Search.." name="search" required>
+            <input type="text" placeholder="Search.." name="search" pattern="^[a-zA-Z0-9-]+$" required>
 
             <button type="submit"><i class="fa fa-search"></i></button>
 
@@ -201,11 +201,11 @@
 
                                     <td class="td1">
                                         <input type="text"
-                                               placeholder="Enter student first name" name="st_f_name" required>
+                                               placeholder="Enter student first name" name="st_f_name" pattern="^[a-zA-Z]+$" required>
                                     </td>
                                     <td class="td1"><input type="text"
                                                            placeholder="Enter student second name" name="st_s_name"
-                                                           required></td>
+                                                           pattern="^[a-zA-Z]+$" required></td>
                                     <td class="td1" style="width:20%;font-size:14px;font-weight:500; color: #757575">
                                         <input type="radio" name="st_status" value="Budget" required>Budget
                                         <input type="radio" name="st_status" value="Contract" required>Contract
@@ -239,11 +239,11 @@
                                 </tr>
                                 <tr class="tr1">
                                     <td class="td1"><input type="text"
-                                                           placeholder="Enter student first name" name="st_f_name"
+                                                           placeholder="Enter student first name" pattern="^[a-zA-Z]+$" name="st_f_name"
                                                            value="${editName}">
                                     </td>
                                     <td class="td1"><input type="text"
-                                                           placeholder="Enter student second name" name="st_s_name"
+                                                           placeholder="Enter student second name" pattern="^[a-zA-Z]+$" name="st_s_name"
                                                            value="${editSurname}" required></td>
                                     <td class="td1" style="width:20%;font-size:14px;font-weight:500; color: #757575">
                                         <c:if test="${editStatus == 'BUDGET'}">
