@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "studentEditConfirm", value = "/studentEditConfirm")
-public class StudentEditorComfirm extends HttpServlet {
+public class StudentEditorConfirm extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         Student st = new Student();
         String gname = req.getParameter("name");
