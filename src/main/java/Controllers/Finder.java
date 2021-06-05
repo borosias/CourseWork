@@ -26,11 +26,8 @@ public class Finder extends HttpServlet {
         String search = req.getParameter("search").toLowerCase();
         if ("surname".equals(filter)) {
             listFindStudents = st.findStudentBySurname(search);
-            if(Objects.isNull(listFindStudents)){
+            listFindStudents.sort(Comparator.comparing(student -> student.get(1)));
 
-            }else {
-                listFindStudents.sort(Comparator.comparing(student -> student.get(1)));
-            }
         }
         if ("group".equals(filter)) {
             try {
